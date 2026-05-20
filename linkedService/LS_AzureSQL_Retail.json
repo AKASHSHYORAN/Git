@@ -1,0 +1,36 @@
+{
+	"name": "LS_AzureSQL_Retail",
+	"properties": {
+		"parameters": {
+			"sqlusername": {
+				"type": "string",
+				"defaultValue": "0"
+			},
+			"sqlpassword": {
+				"type": "string",
+				"defaultValue": "0"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "sql-retailkart-akash01.database.windows.net",
+			"database": "sqldb-retailkart-01",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "'@Microsoft.KeyVault(UserName=sqlusername')'",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_AzureKeyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": {
+					"value": "'@Microsoft.KeyVault(SecretName='sqlpassword')'",
+					"type": "Expression"
+				}
+			}
+		}
+	}
+}
