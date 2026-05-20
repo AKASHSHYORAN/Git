@@ -1,16 +1,6 @@
 {
 	"name": "LS_AzureSQL_Retail",
 	"properties": {
-		"parameters": {
-			"sqlusername": {
-				"type": "string",
-				"defaultValue": "0"
-			},
-			"sqlpassword": {
-				"type": "string",
-				"defaultValue": "0"
-			}
-		},
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
