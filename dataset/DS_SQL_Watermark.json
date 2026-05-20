@@ -1,0 +1,21 @@
+{
+	"name": "DS_SQL_Watermark",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AzureSQL_Retail",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"ServerName": "sql-retailkart-akash01.database.windows.net",
+				"DatabaseName": "sqldb-retailkart-01",
+				"UserName": "sqladmin"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "pipeline_watermark"
+		}
+	}
+}
