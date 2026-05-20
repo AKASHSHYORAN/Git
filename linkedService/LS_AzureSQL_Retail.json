@@ -15,16 +15,16 @@
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"server": "@{linkedService().ServerName}",
-			"database": "@{linkedService().DatabaseName}",
+			"server": "sql-retailkart-akash01.database.windows.net",
+			"database": "akdb",
 			"encrypt": "mandatory",
 			"trustServerCertificate": false,
 			"authenticationType": "SQL",
-			"userName": "@{linkedService().UserName}",
+			"userName": "sqladmin",
 			"password": {
 				"type": "AzureKeyVaultSecret",
 				"store": {
-					"referenceName": "keyforall",
+					"referenceName": "LS_AzureKeyVault",
 					"type": "LinkedServiceReference"
 				},
 				"secretName": "sqlpassword"
