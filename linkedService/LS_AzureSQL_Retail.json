@@ -14,22 +14,19 @@
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"server": "sql-retailkart-akash01.database.windows.net",
-			"database": "sqldb-retailkart-01",
+			"server": "aksserver",
+			"database": "retaildbak",
 			"encrypt": "mandatory",
 			"trustServerCertificate": false,
 			"authenticationType": "SQL",
-			"userName": "'@Microsoft.KeyVault(UserName=sqlusername')'",
+			"userName": "akasg13333",
 			"password": {
 				"type": "AzureKeyVaultSecret",
 				"store": {
 					"referenceName": "LS_AzureKeyVault",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": {
-					"value": "'@Microsoft.KeyVault(SecretName='sqlpassword')'",
-					"type": "Expression"
-				}
+				"secretName": "sqlpassword"
 			}
 		}
 	}
