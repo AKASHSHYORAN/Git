@@ -1,19 +1,30 @@
 {
 	"name": "LS_AzureSQL_Retail",
 	"properties": {
+		"parameters": {
+			"ServerName": {
+				"type": "string"
+			},
+			"DatabaseName": {
+				"type": "string"
+			},
+			"UserName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"server": "aksserver",
-			"database": "retaildbak",
+			"server": "@{linkedService().ServerName}",
+			"database": "@{linkedService().DatabaseName}",
 			"encrypt": "mandatory",
 			"trustServerCertificate": false,
 			"authenticationType": "SQL",
-			"userName": "akasg13333",
+			"userName": "@{linkedService().UserName}",
 			"password": {
 				"type": "AzureKeyVaultSecret",
 				"store": {
-					"referenceName": "LS_AzureKeyVault",
+					"referenceName": "keyforall",
 					"type": "LinkedServiceReference"
 				},
 				"secretName": "sqlpassword"
